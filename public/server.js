@@ -1,6 +1,6 @@
-var http = require('http') , app = require('../app') ,  port = 9090,
+var http = require('http') , app = require('../app') ,  port = process.env.PORT || 5000,
 serverHostname = "localhost",  httpServer = http.createServer(app) ;
-httpServer.listen(
+httpServer.listen(port)(
     port , serverHostname , 
     function () { console.log("Server is running ? YES", "port number ===> " + port);
 });
